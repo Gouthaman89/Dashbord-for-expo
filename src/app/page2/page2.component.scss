@@ -1,0 +1,43 @@
+.grid-container {
+  margin: 20px;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+  width: 100%;
+  height: calc(100% - 3px);
+  display: flex;
+  flex-flow: column;  
+  box-sizing: border-box;
+}
+ngx-charts-legend {
+  display: block !important;
+}
+.mat-header-row{
+  min-height: 25px;
+}
+mat-row.mat-row.ng-star-inserted 
+  { height: 29px !important; } 
+
+.mat-row{ min-height: 20px; }
+ 
+.mat-column-color {
+  flex: 0 0 10px;
+}
+mat-header-cell, mat-cell {
+  justify-content: center;
+}

@@ -1,0 +1,101 @@
+<div class="grid-container">
+  <mat-grid-list cols="4" rowHeight="300px">
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-card-content class="dashboard-card-content">
+        <h1>出庫單完成度</h1>
+<div echarts [autoResize]="true" [options]="chartOptions"></div>
+</mat-card-content>
+</mat-grid-tile> 
+<mat-grid-tile [colspan]="1" [rowspan]="1">
+  <mat-card-content class="dashboard-card-content">
+    <h1>出庫單完成度</h1>
+<div
+echarts [autoResize]="true" [options]="chartOption1"
+ 
+></div>
+</mat-card-content>
+</mat-grid-tile>
+<mat-grid-tile [colspan]="1" [rowspan]="1">
+  <mat-card-content class="dashboard-card-content">
+    <h1>出庫單完成度</h1>
+<div
+echarts [autoResize]="true" [options]="chartOption2"
+ 
+></div>
+</mat-card-content>
+</mat-grid-tile> 
+<mat-grid-tile [colspan]="1" [rowspan]="1">
+  <mat-card-content class="dashboard-card-content">
+    <h1>出庫單完成度</h1>
+<div
+echarts [autoResize]="true" [options]="chartOption4"
+></div>
+</mat-card-content>
+</mat-grid-tile>  
+</mat-grid-list>
+<mat-grid-list cols="4" rowHeight="350px">
+  <mat-grid-tile [colspan]="1" [rowspan]="1">
+  <mat-card-content class="dashboard-card-content">
+<div
+echarts [autoResize]="true" [options]="chartOption1"
+ 
+></div>
+</mat-card-content>
+</mat-grid-tile> 
+<mat-grid-tile [colspan]="3" [rowspan]="1">
+  <mat-card-content class="dashboard-card-content">
+    <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- type Column -->
+      <ng-container matColumnDef="type">
+        <mat-header-cell *matHeaderCellDef> 類型 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.type }} </mat-cell>
+      </ng-container>
+    
+      <!-- EMPID Column -->
+      <ng-container matColumnDef="EMPID">
+        <mat-header-cell *matHeaderCellDef> 派車單號 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.EMPID }} </mat-cell>
+      </ng-container>
+    
+      <!-- c_time Column -->
+      <ng-container matColumnDef="c_time">
+        <mat-header-cell *matHeaderCellDef>派車時間 </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.c_time }}</mat-cell>
+      </ng-container>
+    
+      <!-- EMPNM Column -->
+      <ng-container matColumnDef="EMPNM">
+        <mat-header-cell *matHeaderCellDef> 指派人員</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.EMPNM }} </mat-cell>
+      </ng-container>
+    
+      <!-- d_time Column -->
+      <ng-container matColumnDef="d_time">
+        <mat-header-cell *matHeaderCellDef>開始時間</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.d_time }}</mat-cell>
+      </ng-container>
+    
+      <!-- state Column -->
+      <ng-container matColumnDef="state">
+        <mat-header-cell *matHeaderCellDef>狀態</mat-header-cell>
+        <mat-cell
+          *matCellDef="let element"
+          [ngStyle]="{ 'background-color': element.collr, 'min-height': '29px' }"
+        >
+          {{ element.state }}
+        </mat-cell>
+      </ng-container>
+    
+      <!-- e_time Column -->
+      <ng-container matColumnDef="e_time">
+        <mat-header-cell *matHeaderCellDef>完成時間</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.e_time }} </mat-cell>
+      </ng-container>
+    
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+</mat-card-content>
+</mat-grid-tile> 
+</mat-grid-list>
+</div>
